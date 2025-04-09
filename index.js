@@ -4,7 +4,10 @@ const mongoose = require('mongoose');
 const cors = require('cors');
 
 const app = express();
-app.use(cors());
+//app.use(cors());
+app.use(cors({
+  origin: 'https://kind-dune-0d59eb210.6.azurestaticapps.net/'
+}));
 
 mongoose.connect(process.env.DATABASE_URL)
     .then(() => console.log("Database connected successfully"))
